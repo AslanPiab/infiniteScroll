@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin:0;
+    background-color: #000000;
+}
+
+/*bloc conteneur des items*/
+.wrapper {
+    border: black; 
+    width: 100%; /* pour garder un espace */
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-top: 5rem;
+    overflow: hidden;
+    /* donner un effet de disparition / dégradation de l'image */
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+    );
+}
+
+@keyframes scrollleft {
+    to {
+        left: -200px; /* permet de sortir du "wrapper"*/
+    }
+}
+
+.item {
+    width: 200px;
+    height: 100px;
+    background-color:#000000;
+    border-radius: 6px;
+    position: absolute;
+    left: calc(200px * 8); 
+    animation-name: scrollleft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+.item1 {
+    animation-delay:calc(30s / 8 * (8 - 1) * -1) ; /* temps / par nombre d'item * (Nombre d'item moins le numéro de l'item concerné) * -1 pour rendre le chiffre négatif */
+    background-image:url('../img/html5-logo.png');
+    background-repeat: no-repeat;
+    background-size: 200px 100px; /*pour adapter l'image à la case item*/ 
+    text-align: center;
+}
+
+.item2 {
+    animation-delay:calc(30s / 8 * (8 - 2) * -1) ;
+    background-image: url('../img/css3-logo.png');
+    background-repeat: no-repeat;
+    background-size: 200px 100px;
+}
+
+.item3 {
+    animation-delay:calc(30s / 8 * (8 - 3) * -1) ;
+    background-image: url('../img/js-logo.png');
+    background-size: 200px 100px;
+}
+
+.item4 {
+    animation-delay:calc(30s / 8 * (8 - 4) * -1) ;
+    background-image: url('../img/php-logo_1.png');
+    background-size: 200px 100px;
+}
+
+.item5 {
+    animation-delay:calc(30s / 8 * (8 - 5) * -1) ;
+    background-image: url('../img/Logo-Afpa.png');
+    background-size: 200px 100px;
+}
+
+.item6 {
+    animation-delay:calc(30s / 8 * (8 - 6) * -1) ;
+    background-image: url('../img/pngegg.png');
+    background-size: 200px 100px;
+}
+
+.item7 {
+    animation-delay:calc(30s / 8 * (8 - 7) * -1);
+    background-image: (url('../img/Running-Pikachu-GIF.webp'));
+    background-size: contain;
+    z-index: 1;
+}
+
+.item8 {
+    animation-delay:calc(30s / 8 * (8 - 8) * -1) ;
+}
+
+/*span {
+    text-align: center;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 64px;
+    color: #ffd6d6;
+    line-height: 1;
+    text-transform: uppercase;
+    animation: flashing 1.4s infinite alternate;
+    background-color: transparent;
+  }
+      
+  
+  @keyframes flashing {
+      0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
+        text-shadow:
+          0 0 16px #f46600,
+          0 0 16px #f46600,
+          0 0 32px #FF0000,
+          0 0 64px #FF0000,
+          0 0 90px #FF0000,
+          0 0 124px #FF0000;
+      }
+      20%, 34%, 41% {        
+        text-shadow: none;
+      }    
+  }
